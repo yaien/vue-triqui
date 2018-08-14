@@ -11,7 +11,7 @@ export default {
   props: {
     color: { type: String, default: "transparent" },
     grow: { type: Number, default: 1 },
-    owner: { type: String, default: "s-empty" },
+    owner: { type: String },
     row: { type: Number, required: true },
     col: { type: Number, required: true }
   },
