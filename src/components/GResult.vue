@@ -63,6 +63,7 @@ export default {
   border: none;
   cursor: pointer;
   font-size: 1rem;
+  text-transform: uppercase;
 }
 .draw {
   height: 20%;
