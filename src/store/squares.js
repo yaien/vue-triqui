@@ -21,9 +21,12 @@ export class Matrix {
   }
 
   set(row, column, value) {
+    let commited = false;
     if (!this.items[row][column]) {
       this.items[row][column] = value;
+      commited = true;
     }
+    return commited;
   }
 
   clone() {

@@ -36,10 +36,12 @@ const store = new Vuex.Store({
   actions: {
     toggleSquare(store, { row, col }) {
       let { squares, player } = store.state;
-      squares.set(row, col, player);
-      store.commit("updateSquares", squares.clone());
-      store.dispatch("checkResult");
-      store.commit("setPlayer", next(player));
+      let changed = squares.set(row, col, player);
+      if (changed) {
+        store.commit("updateSquares", squares.clone());
+        store.dispatch("checkResult");
+        store.commit("setPlayer", next(player));
+      }
     },
     checkResult(store) {
       let { squares, player } = store.state;
